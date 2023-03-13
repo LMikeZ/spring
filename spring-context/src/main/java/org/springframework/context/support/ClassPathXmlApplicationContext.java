@@ -49,7 +49,7 @@ import org.springframework.util.Assert;
  * @see #getResourceByPath
  * @see GenericApplicationContext
  */
-public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContext {
+public class ClassPathXmlApplicationContext extends org.springframework.context.support.AbstractXmlApplicationContext {
 
 	@Nullable
 	private Resource[] configResources;
@@ -139,6 +139,8 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 			throws BeansException {
 
 		super(parent);
+
+		//创建解析器，解析configLocations
 		setConfigLocations(configLocations);
 		if (refresh) {
 			refresh();

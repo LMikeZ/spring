@@ -16,13 +16,9 @@
 
 package org.springframework.stereotype;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
 import org.springframework.core.annotation.AliasFor;
+
+import java.lang.annotation.*;
 
 /**
  * Indicates that an annotated class is a "Service", originally defined by Domain-Driven
@@ -44,7 +40,7 @@ import org.springframework.core.annotation.AliasFor;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Component
+@org.springframework.stereotype.Component
 public @interface Service {
 
 	/**
@@ -52,7 +48,7 @@ public @interface Service {
 	 * to be turned into a Spring bean in case of an autodetected component.
 	 * @return the suggested component name, if any (or empty String otherwise)
 	 */
-	@AliasFor(annotation = Component.class)
+	@AliasFor(annotation = org.springframework.stereotype.Component.class)
 	String value() default "";
 
 }

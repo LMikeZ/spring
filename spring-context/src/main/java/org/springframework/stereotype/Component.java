@@ -42,7 +42,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Indexed
+@org.springframework.stereotype.Indexed
 public @interface Component {
 
 	/**
